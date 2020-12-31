@@ -1,0 +1,37 @@
+.main--selection {
+    width: 70%;
+}
+
+.main--selection button {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 0.5em 0em;
+    border-radius: 2px;
+    margin: 0.2em 0em;
+    cursor: pointer;
+    background-color: transparent;
+    border: 3px solid transparent;
+    border-left: 3px solid rgb(15, 168, 205);
+    transition: 0.3s ease-in-out;
+    outline: none;
+}
+
+.main--selection button:hover {
+    background-color: rgb(15, 168, 205);
+    color: white;
+    border: 3px solid transparent;
+    box-shadow: 0px 0px 25px 1px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 1000px) {
+    .main--selection button {
+        font-size: 1.2rem;
+        overflow: hidden;
+    }
+    .main--selection button:hover {
+        background-color: transparent;
+        color: black;
+        box-shadow: none;
+        border-left: 3px solid rgb(15, 168, 205);
+    }
+}

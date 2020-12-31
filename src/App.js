@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import {React, useState} from 'react'
+import './Styles/App.css';
+import Title from './Components/Title';
+import Form from './Components/Form';
+import Quiz from './Components/Quiz';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App() {
+    const [form, showForm] = useState(false);
+    const serveForm = () => {showForm(true)}
+    const [difficulty, setDifficulty] = useState(null);
+
+    const setMode = (difficulty) => {
+        setDifficulty(difficulty);
+        console.log(difficulty)
+    }
+
+    return (
+        <div className = "main--app">
+            {!form && <Title onClick = {serveForm}></Title>}
+            {form && <Form setMode = {setMode} type = "title_form"></Form>}
+            {difficulty && <Quiz mode = {difficulty}></Quiz>}
+        </div>
+    )
 }
-
-export default App;

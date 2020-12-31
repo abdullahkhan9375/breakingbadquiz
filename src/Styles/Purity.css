@@ -1,0 +1,98 @@
+.main--purity {
+    width: 25%;
+    height: 39vh;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5em 0em;
+    background-image: url('../IMG/meth.PNG');
+    background-repeat: no-repeat;
+    color: white;
+    box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.3);
+}
+
+.purity--item.title {
+    font-size: 3rem;
+}
+
+.purity--item.score {
+    font-size: 6em;
+    font-weight: 1000;
+}
+
+.purity--item.footer {
+    font-size: 3rem;
+}
+
+.purity--item.final {
+    margin-top: 1rem;
+    padding: 0em 1.5em;
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.purity--item.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.purity--item.button button {
+    width: 70%;
+    font-size: 1.4rem;
+    padding: 0.5em 0em;
+    border-radius: 2px;
+    margin: 1em 0em 0em 0em; 
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: 3px solid rgb(5, 80, 98);
+    transition: 0.3s ease-in-out;
+    outline: none;
+}
+
+.purity--item.button button:hover {
+    background-color: rgb(5, 80, 98);
+    color: white;
+    border: 3px solid transparent;
+    box-shadow: 0px 0px 25px 1px rgba(0, 0, 0, 0.4);
+}
+
+
+@media screen and (max-width : 1200px){
+    .main--purity {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width : 700px){
+    .main--purity {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width : 500px){
+    .main--purity {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width : 300px){
+    .main--purity{
+        width:  100%;
+        height: 35%;
+    }
+    .purity--item.title{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .purity--item.footer{
+        font-size: 2rem;
+    }
+}

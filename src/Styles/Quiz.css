@@ -1,0 +1,146 @@
+.main--quiz {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    transition: 0.5s linear;
+}
+
+.quiz--title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+.quiz--item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz--img {
+    width: 80%;
+    padding-right: 0em;
+    border-radius: 3px;
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.4);
+}
+
+.quiz--content {
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 300;
+
+}
+
+.wrong {
+    width: 70%;
+}
+
+.right {
+    width: 70%;
+}
+
+.wrong button {
+    width: 100%;
+    height: auto;
+    font-size: 1.4rem;
+    padding: 0.5em 0em;
+    border-radius: 2px;
+    margin: 0.2em 0em;
+    cursor: pointer;
+    background-color: transparent;
+    border: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+    outline: none;
+    background-color: #D9594C;
+    outline: none;
+    color: white;
+}
+
+.right button {
+    width: 100%;
+    height: auto;
+    font-size: 1.4rem;
+    padding: 0.5em 0em;
+    border-radius: 2px;
+    margin: 0.2em 0em;
+    cursor: pointer;
+    background-color: transparent;
+    border: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+    outline: none;
+    color: white;
+    background-color: #7AC74F;
+}
+
+.wrong button:hover {
+    border: 3px solid transparent;
+}
+
+.right button:hover {
+    border: 3px solid transparent;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: initial;
+}
+
+@media screen and (max-width : 1000px){
+    .main--quiz {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width : 800px){
+    .main--quiz{
+        flex-direction: column;
+        height: 100%;
+    }
+    .quiz--item{
+        width: 100%;
+    }
+
+    .quiz--title{
+        margin-top: 1em;
+        padding: 0em 2em;
+    }
+
+    .quiz--item img{
+        width : 60%;
+    }
+
+    .quiz--content{
+        flex-direction: column;
+    }
+    .quiz--content button:hover{
+        background-color: none;
+    }
+    .right button{
+        font-size: 1.2rem;
+    }
+    .wrong button {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width : 350px){
+    .main--quiz {
+        width: 100%;
+    }
+}
