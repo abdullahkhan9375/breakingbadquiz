@@ -1,8 +1,8 @@
 import React from 'react'
 import './../Styles/Selections.css';
 
-
-export default function Selection(props) {
+export default function Selection(props)
+{
     const text = props.text;
     const selection = props.selection;
     return (

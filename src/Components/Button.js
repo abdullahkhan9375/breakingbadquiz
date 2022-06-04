@@ -6,5 +6,14 @@ export default function Button(props) {
     const funcApp = props.onClick;
     const addProp = props.onMouseEnter;
     const remProp = props.onMouseLeave;
-    return <button  onMouseLeave = {remProp} onMouseEnter = {addProp}  onClick = {funcApp} className = "title--btn"> Start </button>
+    return (
+    <button
+        className="title--btn" 
+        onMouseLeave={remProp}
+        onMouseEnter={addProp}
+        onClick={funcApp}
+    >
+        {props.children}
+    </button>
+    );
 }

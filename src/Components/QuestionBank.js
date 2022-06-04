@@ -364,7 +364,7 @@ const questions = {
                 option_4 : "The R.V"
             }
         },
-         q9 : {
+        q9 : {
             id : 'q9-ha',
             title : "How did Walter die?",
             char_id : 1,

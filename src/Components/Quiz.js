@@ -105,7 +105,7 @@ let tym;
     return (
         <>
         {!quesEnd && renderQuestion}
-        {quesEnd && <Purity score = {score}></Purity>}
+        {quesEnd && <Purity score = {score}/>}
         </>
     )
 }

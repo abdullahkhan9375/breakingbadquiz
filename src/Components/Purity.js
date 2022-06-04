@@ -2,12 +2,12 @@ import {React, useState, useEffect} from 'react'
 import '../Styles/Purity.css';
 import quotes from './Quotes';
 
-
-function getRandom () {
+function getRandom ()
+{
     return Math.round(Math.random())
 }
-export default function Purity(props) {
-
+export default function Purity(props)
+{
     const score = props.score * 10;
     const [level, setLevel] = useState('25%');
     const [ready, setReady] = useState(false);
