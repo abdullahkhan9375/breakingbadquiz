@@ -5,35 +5,35 @@ import QuizImage from './QuizImage';
 import questions from './QuestionBank';
 import Purity from './Purity';
 
-
-
-export default function Quiz(props) {
-
-    const [mode, setMode] = useState(props.mode);
+export default function Quiz(props)
+{
     const [score, setScore] = useState(0);
     const [quesNum, setQuesNum] = useState(0);
-    const qBank = questions[mode];
-    
+    const qBank = questions[props.mode];
+
     const mainRef = useRef();
     const mainQuiz = useRef();
     const list = [qBank.q1, qBank.q2, qBank.q3, qBank.q4, qBank.q5, qBank.q6, qBank.q7, qBank.q8, qBank.q9, qBank.q10, qBank.q11];
     const qLength = list.length;
     const [selection, setSelection] = useState(null);
-    const [selectionIndex, setSelectionIndex] = useState(null)
     const [quesEnd, setQuesEnd] = useState(false);
- 
 
-    function handleSelection(option,i) {
-        setSelection(option);
-        setSelectionIndex(i)
-    }
-    const selections = Object.values(list[quesNum].selections).map((el, i) => {
+    const selections = Object.values(list[quesNum].selections).map((aElement, index) =>
+    {
         return (
-        <Selection text = {el} key ={i} id = {i} selection = {(option) => (handleSelection(option, i))}></Selection>)})
+        <Selection
+            text={aElement}
+            key={index}
+            id={index}
+            selection={setSelection}
+        />
+        );
+    });
     
 
     //short for selection. Each selection is changed according to correct answer.
-    function sels(mainRef, correct){
+    function sels(mainRef, correct)
+    {
         const node = mainRef.current.children;
         const wrongOnes = Object.values(node).filter(el => correct !== el.innerText);
         const rightOne = Object.values(node).filter(el => correct === el.innerText);
@@ -45,7 +45,7 @@ export default function Quiz(props) {
 
 
     // every node is selected for the cleanup function and state is refreshed.
-    function cleanupSels(mainRef, correct){
+    function cleanupSels(mainRef){
         const node = mainRef.current.children;
         Object.values(node).forEach((el) => {
             if (el.classList.contains('right') || el.classList.contains('wrong')){
@@ -89,17 +89,15 @@ let tym;
         </div>
     </div>)
 
-    function mainCleanup(mainRef, mainQuiz, correct, tym){
-        cleanupSels(mainRef, correct);
-        if (quesNum == qLength - 1){
+    function mainCleanup(mainRef)
+    {
+        cleanupSels(mainRef);
+        if (quesNum === qLength - 1){
             setQuesEnd(true)
         }
     }
-    const renderResult = (
-        <div> <h1> {score}  </h1></div>
-    )
     useEffect(()=> {
-        return mainCleanup(mainRef, list[quesNum].correct, mainQuiz, tym)
+        return mainCleanup(mainRef)
     }, [quesNum])
 
     return (

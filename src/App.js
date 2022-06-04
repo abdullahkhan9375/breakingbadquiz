@@ -22,7 +22,7 @@ export default function App()
                     />
             }
             {difficulty
-                && <Quiz mode = {difficulty}/>
+                && <Quiz mode={difficulty}/>
             }
         </div>
     );
